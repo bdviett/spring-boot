@@ -11,10 +11,5 @@ public class MainApplication {
 		HelloApplication objectA = (HelloApplication) context.getBean("helloWorld");
 		objectA.getMessenger();
 		context.registerShutdownHook();
-		/*
-		 * Output
-		 * Your messenger is : This is example of SingleTon Bean: onbject A !
-		 * Your messenger is : Hello World!
-		 */
 	}
 }
