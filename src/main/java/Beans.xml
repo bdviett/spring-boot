@@ -17,5 +17,16 @@
    <bean id = "helloWorld" class = "com.example.demo.HelloApplication" scope="singleton">
       <property name = "messenger" value = "Hello World!"/> 
    </bean>
+   
+   <!--
+   Neu scope la prototype thif Spring IoC container se tao mot bean moi moi khi request den bean do dc khoi tao.
+   Một bean được định nghĩa với scope là prototype thì Spring container sẽ trả về instant khác nhau cho mỗi request.
+    -->
+
+	<bean id="examplePrototype" class="com.example.demo.HelloApplication" scope="prototype">
+		<property name="messenger" value="Hello World!" />
+	</bean>
+   
+   
 
 </beans>
