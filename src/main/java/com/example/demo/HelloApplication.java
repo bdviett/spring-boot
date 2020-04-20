@@ -1,8 +1,5 @@
 package com.example.demo;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
 public class HelloApplication {
 	
 	private String messenger;
@@ -13,5 +10,16 @@ public class HelloApplication {
 	
 	public void getMessenger() {
 		System.out.println("Your messenger is : " + messenger);
+	}
+	
+	//init-method="init"
+	
+	public void init() {
+		System.out.println("Bean is going through init.");
+	}
+	
+	//destroy-method="destroy"
+	public void destroy() {
+		System.out.println("Bean will destroy now");
 	}
 }

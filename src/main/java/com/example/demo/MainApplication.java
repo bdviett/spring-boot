@@ -1,20 +1,16 @@
 package com.example.demo;
 
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-		HelloApplication objectA = (HelloApplication) context.getBean("examplePrototype");
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 		
-		//lúc nào gọi thì đối một đối tượng mới được tạo ra.
-		objectA.setMessenger("This is example of SingleTon Bean: onbject A !");
+		HelloApplication objectA = (HelloApplication) context.getBean("helloWorld");
 		objectA.getMessenger();
-		
-		HelloApplication objectB = (HelloApplication) context.getBean("examplePrototype");
-		objectB.getMessenger();
+		context.registerShutdownHook();
 		/*
 		 * Output
 		 * Your messenger is : This is example of SingleTon Bean: onbject A !

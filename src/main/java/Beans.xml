@@ -3,30 +3,17 @@
 <beans xmlns = "http://www.springframework.org/schema/beans"
    xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation = "http://www.springframework.org/schema/beans
-   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+   default-init-method = "init" 
+   default-destroy-method = "destroy">
 
-		<!--
-		//scope="singleton" là gì: Nếu set scope là singleton thì IoC của Spring sẽ tạo 1 
-		//instance của đối tượng được định nghĩa bởi bean va lưu vào cache
-		//tất cả các request tiếp theo mà ref bởi id đó nó sẽ lấy đối tượng trong cache ra 
-		//mặc định scope luôn là singleton nhưng khi bạn cần 1 và chỉ một thể hiện của bean
-		//bạn nên đặt thuộc tính scope thành singleton: scope="singleton":
-		<bean id = "..." class = "..." scope = "singleton">
-		</bean>
-		-->
-   <bean id = "helloWorld" class = "com.example.demo.HelloApplication" scope="singleton">
-      <property name = "messenger" value = "Hello World!"/> 
-   </bean>
-   
-   <!--
-   Neu scope la prototype thif Spring IoC container se tao mot bean moi moi khi request den bean do dc khoi tao.
-   Một bean được định nghĩa với scope là prototype thì Spring container sẽ trả về instant khác nhau cho mỗi request.
-    -->
-
-	<bean id="examplePrototype" class="com.example.demo.HelloApplication" scope="prototype">
+	<bean id="helloWorld" class="com.example.demo.HelloApplication"
+		scope="singleton" init-method="init" destroy-method="destroy">
 		<property name="messenger" value="Hello World!" />
 	</bean>
-   
-   
 
+<!--  Default initialization and destroy methods
+   default-init-method = "init" 
+   default-destroy-method = "destroy"
+-->
 </beans>
