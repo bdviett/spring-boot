@@ -1,13 +1,18 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainApplication {
 
 	public static void main(String[] args) {
-		XmlBeanFactory factory = new XmlBeanFactory(new ClassPathResource("Beans.xml"));
-		HelloApplication obj = (HelloApplication) factory.getBean("helloWorld");
-		obj.getMessenger();
+		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		HelloApplication objectA = (HelloApplication) context.getBean("helloWorld");
+		
+		objectA.setMessenger("This is example of SingleTon Bean: onbject A !");
+		objectA.getMessenger();
+		
+		HelloApplication objectB = (HelloApplication) context.getBean("helloWorld");
+		objectB.getMessenger();
 	}
 }
