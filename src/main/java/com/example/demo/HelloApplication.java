@@ -1,13 +1,17 @@
 package com.example.demo;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class HelloApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(HelloApplication.class, args);
+	
+	private String messenger;
+	
+	public void setMessenger(String messenger) {
+		this.messenger = messenger;
 	}
-
+	
+	public void getMessenger() {
+		System.out.println("Your messenger is : " + messenger);
+	}
 }
