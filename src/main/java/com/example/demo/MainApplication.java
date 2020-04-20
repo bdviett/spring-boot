@@ -1,13 +1,13 @@
 package com.example.demo;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
 
 public class MainApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-		HelloApplication obj = (HelloApplication) context.getBean("helloWorld"); //getBean se lay id tu thang Beans.xml: <bean id = "helloWorld">
+		XmlBeanFactory factory = new XmlBeanFactory(new ClassPathResource("Beans.xml"));
+		HelloApplication obj = (HelloApplication) factory.getBean("helloWorld");
 		obj.getMessenger();
 	}
 }
