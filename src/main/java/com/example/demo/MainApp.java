@@ -6,10 +6,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-		TextEdittor te = (TextEdittor) context.getBean("textEdittor");
-		te.spellCheck();
+		ApplicationContext context = new ClassPathXmlApplicationContext("bean-collection.xml");
+		JavaCollection javaCollect = (JavaCollection) context.getBean("javaCollection");
+		
+		javaCollect.getAddressList();
+		javaCollect.getAddressMap();
+		javaCollect.getAddressProp();
+		javaCollect.getAddressSet();
 	}
-
 }

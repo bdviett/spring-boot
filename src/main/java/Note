@@ -1,0 +1,10 @@
+NOTE - SPRING BY BDVIET
+I. Spring - Injecting Collection
+have 4 options: List, Set, Map, and Properties
+You can use either <list> or <set> to wire any implementation of java.util.Collection or an array.
+You will come across two situations 
+		(a) Passing direct values of the collection 
+		(b) Passing a reference of a bean as one of the collection elements.
+		
+		
+II. 

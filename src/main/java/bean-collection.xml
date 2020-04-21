@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="javaCollection" class="com.example.demo.JavaCollection">
+
+		<!-- results in a setAddressList(java.util.List) call -->
+		<property name="addressList">
+			<list>
+				<value>Hanoi</value>
+				<value>Hue</value>
+				<value>Danang</value>
+				<value>Saigon</value>
+			</list>
+		</property>
+
+		<!-- results in a setAddressSet(java.util.Set) call -->
+		<property name="addressSet">
+			<set>
+				<value>Hanoi</value>
+				<value>Hue</value>
+				<value>Danang</value>
+				<value>Saigon</value>
+			</set>
+		</property>
+
+		<!-- results in a setAddressMap(java.util.Map) call -->
+		<property name="addressMap">
+			<map>
+				<entry key="1" value="Hanoi" />
+				<entry key="2" value="Hue" />
+				<entry key="3" value="Danang" />
+				<entry key="4" value="Saigon" />
+			</map>
+		</property>
+
+		<!-- results in a setAddressProp(java.util.Properties) call -->
+		<property name="addressProp">
+			<props>
+				<prop key="one">Hanoi</prop>
+				<prop key="one">Hanoi</prop>
+				<prop key="two">Hue</prop>
+				<prop key="three">Danang</prop>
+				<prop key="four">Saigon</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>
