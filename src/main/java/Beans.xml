@@ -4,20 +4,12 @@
    xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation = "http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-   
-	<bean id="helloWorld" class="com.example.demo.HelloApplication"
-		init-method="init" destroy-method="destroy">
-		<property name="messenger" value="Hello World!" />
-	</bean>
-	
-	<bean class="com.example.demo.InitHelloWorld">
-	
-	</bean>
-
-	<!-- Definition for textEditor bean using inner bean -->
-	<bean id="textEditor" class="com.example.demo.TextEdittor">
+   <!-- Definition for textEditor bean using inner bean -->
+	<bean id="textEdittor" class="com.example.demo.TextEdittor">
 		<property name="spellChecker">
-			<bean id="spellChecker" class="com.example.demo.SpellChecker" />
+			<bean id="spellChecker" class="com.example.demo.SpellChecker">
+				
+			</bean>
 		</property>
 	</bean>
 
