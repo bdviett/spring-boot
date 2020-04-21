@@ -6,5 +6,17 @@ You will come across two situations
 		(a) Passing direct values of the collection 
 		(b) Passing a reference of a bean as one of the collection elements.
 		
+List: cho phép trùng lặp.
+Set: không cho trùng lặp
+Map: key-value bất kỳ kiểu dữ liệu nào
+Prop: key-value phải là String
 		
-II. 
+II. Spring - Beans Auto-Wiring
+Trong Spring, Bean Wiring là thuật ngữ dùng để chỉ quá trình các thành phần được liên kết với nhau qua Spring.
+Có 2 để liên kết các bean với nhau là thủ công (Manually) và tự động (Autowiring).
+Manual wiring: Sử dụng thuộc tính ref trong thẻ <property> hoặc <constructor>
+Autowiring: sử dụng thuộc tính autowire trong thẻ <bean>
+autowire="no": Đây là kiểu mặc định, không liên kết tự động, liên kết thủ công thì phải sử dụng thuộc tính 'ref'.
+autowire="byName": Tự động liên kết một thuộc tính đến một thành phần có tên trùng với tên của thuộc tính đó.
+autowire="byType": Tự động liên kết một thuộc tính đến một thành phần có kiểu khớp với kiểu của thuộc tính đó.
+autowire="constructor": Tự động liên kết một thuộc tính đến một thành phần có kiểu khớp với kiểu của tham số trong constructor.
