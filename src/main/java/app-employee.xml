@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	<bean id="employee" class="com.example.demo.Employee"
+		autowire="byType"></bean>
+
+	<bean id="employeeAddress"
+		class="com.example.demo.EmployeeAddress">
+		<property name="duong" value="Trung Kinh"></property>
+		<property name="thanhpho" value="Hanoi"></property>
+	</bean>
+</beans>
+
+<!-- Trong file cấu hình trên rõ ràng là không thành phần nào tham chiếu 
+	đến bean "employeeAddress". Khi thiết lập autowire="byType" thì bean "employee" 
+	sẽ tự động liên kết với bean "employeeAddress" theo kiểu giá trị của bean 
+	(EmployeeAddress) -->

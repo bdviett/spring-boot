@@ -14,7 +14,7 @@ public class Main {
 		  context = new ClassPathXmlApplicationContext("student-bean.xml");
 		  Student student = (Student) context.getBean("student");
 		  System.out.println(student); 
-
+		  //Output: Student [address = Address [city = Ha Noi]]
 	}
 
 }
