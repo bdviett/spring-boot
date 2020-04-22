@@ -20,3 +20,5 @@ autowire="no": Đây là kiểu mặc định, không liên kết tự động, 
 autowire="byName": Tự động liên kết một thuộc tính đến một thành phần có tên trùng với tên của thuộc tính đó.
 autowire="byType": Tự động liên kết một thuộc tính đến một thành phần có kiểu khớp với kiểu của thuộc tính đó.
 autowire="constructor": Tự động liên kết một thuộc tính đến một thành phần có kiểu khớp với kiểu của tham số trong constructor.
+
+III. Event Handling in Spring
